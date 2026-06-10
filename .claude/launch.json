@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "preview",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-Command", "$listener = [System.Net.HttpListener]::new(); $listener.Prefixes.Add('http://localhost:8080/'); $listener.Start(); while ($listener.IsListening) { $ctx = $listener.GetContext(); $path = $ctx.Request.Url.LocalPath.TrimStart('/'); if ($path -eq '') { $path = 'test101616_999.html' }; $file = Join-Path 'C:/Users/amiyazaki/Desktop/101616_1たたき2' $path; if (Test-Path $file) { $bytes = [System.IO.File]::ReadAllBytes($file); $ext = [System.IO.Path]::GetExtension($file); $mime = switch ($ext) { '.html' {'text/html; charset=utf-8'} '.css' {'text/css'} '.js' {'application/javascript'} '.webp' {'image/webp'} '.png' {'image/png'} '.svg' {'image/svg+xml'} default {'application/octet-stream'} }; $ctx.Response.ContentType = $mime; $ctx.Response.OutputStream.Write($bytes, 0, $bytes.Length) } else { $ctx.Response.StatusCode = 404 }; $ctx.Response.Close() }"],
+      "port": 8080
+    }
+  ]
+}

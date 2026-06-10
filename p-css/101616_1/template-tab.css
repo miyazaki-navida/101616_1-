@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/* *****************************************************************************
+   タブレット用のスタイル記述
+***************************************************************************** */
+@media screen and (min-width: 481px) {
+	/* -----------------------------------------------------------------------------
+	 財団カスタマイズ
+	----------------------------------------------------------------------------- */
+	/* 2分割・3分割・4分割 */
+	.half,
+	.trisection,
+	.quarter{
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.half .left,
+	.half .right,
+	.trisection .left,
+	.trisection .center,
+	.trisection .right,
+	.quarter .left1,
+	.quarter .left2,
+	.quarter .right1,
+	.quarter .right2{
+		width: calc(50% - 2vw);
+	}
+	
+	/* flow 横 */
+	.flow-area1 ul li{
+		width: calc(50% - 20px);
+		box-sizing: border-box;
+		margin: 2.5em 20px 1em 0;
+	}
+	.flow-area1 ul li:before{
+		left: 100%;
+		right: auto;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		width: 20px;
+		height: 40px;
+		-webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+		clip-path: polygon(0 0, 100% 50%, 0 100%);
+	}
+	.flow-area1 ul li:last-child{
+		margin-right: 0;
+	}
+	
+	/* お問合せ */
+	.contact{
+		flex-direction: column;
+	}
+	.contact .left,
+	.contact .right{
+		width: 100%;
+	}
+	
+
+	/* -----------------------------------------------------------------------------
+	 個別設定
+	----------------------------------------------------------------------------- */
+	#top-contents .top-item p {
+		font-size: 4cqw;
+	}
+	
+	
+	
+	
+}
+@media screen and (min-width: 581px) {
+	#top-contents .mv {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: stretch;
+		padding: 20px;
+	}
+	#top-contents .top {
+		order: 1;
+		width: 50%;
+	}
+	#top-contents .bottom {
+		order: 2;
+		width: 50%;
+	}
+	#top-contents .layer1 {
+		order: 3;
+		width: 100%;
+		padding: 20px;
+		margin: auto;
+	}
+	#top-contents .top-contents {
+		flex-direction: row;
+	}
+	#top-contents .top-item p {
+		font-size: 3.5cqw;
+	}
+
+	/* 広告手法 (method) */
+	.method-contents {
+		padding: 24px;
+	}
+	.suggestion .inner {
+		padding: 40px 24px;
+	}
+
+}
