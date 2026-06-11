@@ -84,9 +84,6 @@
 .contents_bg1{
 	background-color: var(--light-color)!important;
 }
-.contents_bg2{
-	background: var(--body-bg-color) url("../../p-img/sample_55_1/bg-grid1.png")left top repeat!important;
-}
 .contents_bg3{
 	background-color: #f5f5f5!important;
 }
@@ -1207,11 +1204,7 @@ a[href^="tel:"] {
 
 /* -----------------------------------------------------------------------------
 	 個別設定
------------------------------------------------------------------------------ */
-.inblock {
-	display: inline-block;
-}
-.main-col {
+----------------------------------------------------------------------------- */.main-col {
 	color: var(--main-color);
 }
 .sub-col {

@@ -396,6 +396,7 @@
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
 	gap: 10px;
+	margin: 50px auto 80px;
 }
 .worries-list {
 	grid-column: 1 / -1;
@@ -419,9 +420,6 @@
 	justify-self: start;
 	width: 200px;
 	height: 200px;
-}
-.worries-contents {
-	margin: 50px auto 80px;
 }
 .solution {
 	padding: 100px 0 80px;
@@ -688,9 +686,6 @@
 	}
 
 	/* 選ばれる理由 (reason) */
-	.reason-item .img img {
-		object-fit: contain;
-	}
 	.reason-item .txt {
 		padding-left: 40px;
 	}
@@ -705,12 +700,6 @@
 	}
 	.suggestion .inner {
 		padding: 40px 80px;
-	}
-	.suggestion-list {
-		gap: 40px;
-	}
-	.suggestion-list li {
-		width: calc(50% - 20px);
 	}
 
 }
