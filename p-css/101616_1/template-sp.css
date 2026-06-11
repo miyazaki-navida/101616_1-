@@ -637,6 +637,7 @@ footer .copy a{
 .parts-h1 .reason-number {
 	font-family: var(--body-font-family);
 	font-size: 1.25em;
+	line-height: 0;
 }
 
 /* parts-h2 */
@@ -1262,7 +1263,13 @@ a[href^="tel:"] {
 	display: flex;
 	flex-direction: column;
     margin: 50px auto 0;
-	max-width: 400px;
+	max-width: 372px;
+}
+/* 480px以下は横幅最大90% */
+@media screen and (max-width: 480px) {
+	.intro-contents {
+		max-width: 80%;
+	}
 }
 .intro-contents img {
 	flex: 1;
@@ -1287,6 +1294,12 @@ a[href^="tel:"] {
 	text-align: center;
 	margin: 0 auto 50px;
 	line-height: 2;
+}
+/* 0px～480px は左揃え */
+@media screen and (max-width: 480px) {
+	.lead {
+		text-align: left;
+	}
 }
 
 /* セクション内強調テキスト */
