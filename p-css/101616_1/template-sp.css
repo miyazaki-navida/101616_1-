@@ -69,7 +69,7 @@
 	--footer-top-border-size: 0px; /* border-top 太さ */
 	--footer-top-border-color: var(--dark-color); /* border-top 色 */
 	--footer-logo-width: 200px; /* ロゴ 横幅 */
-	--footer-name-font-size: 1.5em; /* 会社名 文字サイズ */
+	--footer-name-font-size: 1rem; /* 会社名 文字サイズ */
 	--footer-name-font-weight: 700; /* 会社名 文字太さ */
 	
 	/* 常駐ボタン */
@@ -633,6 +633,10 @@ footer .copy a{
 	font-size: .4em;
 	color: var(--h1-sub-color);
 	text-shadow: none;
+}
+.parts-h1 .reason-number {
+	font-family: var(--body-font-family);
+	font-size: 1.25em;
 }
 
 /* parts-h2 */
@@ -1248,6 +1252,12 @@ a[href^="tel:"] {
 	color: var(--sub-color);
 	line-height: 2;
 }
+/* 375px～640px は画面幅に応じてできるだけ大きく（最大1.6em／641px以降と連続） */
+@media screen and (max-width: 640px) {
+	.intro-ttl {
+		font-size: clamp(1.4em, 4.5vw, 1.6em);
+	}
+}
 .intro-contents {
 	display: flex;
 	flex-direction: column;
@@ -1392,7 +1402,8 @@ a[href^="tel:"] {
 }
 .cta .sub-ttl {
 	color: #fff;
-	font-size: .8em;
+	font-size: 1em;
+	font-weight: 500;
 }
 
 
@@ -1680,7 +1691,6 @@ a[href^="tel:"] {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
-	counter-reset: reason-counter;
 }
 .reason-item {
 	display: flex;
@@ -1691,21 +1701,24 @@ a[href^="tel:"] {
 	border-radius: 16px;
 	box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 	position: relative;
-	counter-increment: reason-counter;
 }
-.reason-item::before {
-	content: "理由" counter(reason-counter);
-    position: absolute;
-    top: -1.25em;
-    left: 16px;
-    background: var(--main-color);
-    color: #fff;
-    font-family: var(--h1-main-font-family);
-    font-size: .85em;
-    font-weight: 700;
-    line-height: 1;
-    padding: .8em 1em;
-    border-radius: 100px;
+.reason-label {
+	position: absolute;
+	top: -1.25em;
+	left: 16px;
+	background: var(--main-color);
+	color: #fff;
+	font-family: var(--h1-main-font-family);
+	font-size: .75em;
+	font-weight: 700;
+	line-height: 1;
+	padding: .8em 1em;
+	border-radius: 100px;
+}
+.reason-label-sub {
+	font-size: .7em;
+	font-weight: 400;
+	margin-right: .35em;
 }
 .reason-item .txt {
 	padding: 30px 20px 20px;
@@ -1746,7 +1759,7 @@ a[href^="tel:"] {
 }
 .reason-item .img img {
 	border-radius: 0 0 16px 16px;
-	max-width: 640px;
+	max-width: 500px;
 	margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -1808,12 +1821,14 @@ a[href^="tel:"] {
 }
 .measure-item .img img {
 	border-radius: 8px;
-	max-width: 640px;
+	display: block;
+	width: 100%;
+	max-width: 500px;
 	margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
 	.measure-item .img {
-		background-color: #8ab098;
+		background-color: #8bb49a;
 		padding: 16px 16px 0;
 		border-radius: 0 0 12px 12px;
 	}

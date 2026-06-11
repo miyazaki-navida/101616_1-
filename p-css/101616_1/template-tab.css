@@ -105,3 +105,9 @@
 	}
 
 }
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+	.intro-ttl {
+		font-size: 1.6em;
+	}
+}
